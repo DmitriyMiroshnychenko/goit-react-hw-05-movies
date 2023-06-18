@@ -1,0 +1,10 @@
+.Header {
+  background-color: var(--theme-color);
+  box-shadow: 0px 2px 5px rgb(0 0 0 / 12%);
+}
+
+.Header-container {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 1200px;
+}

@@ -1,0 +1,20 @@
+.CastList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.CastList-item {
+  width: calc(100% / 6 - 30px);
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.CastList-item img {
+  margin-bottom: 10px;
+}
