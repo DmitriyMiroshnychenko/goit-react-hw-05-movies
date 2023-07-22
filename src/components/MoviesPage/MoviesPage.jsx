@@ -46,24 +46,7 @@ export function MoviesPage() {
   }
 
   return (
-    <Container>
-      <form className={styles.SearchForm} onSubmit={handleSubmit}>
-        <input
-          className={styles['SearchForm-input']}
-          type="text"
-          name="searchQuery"
-          value={searchQuery}
-          onChange={handleSearchQuery}
-          autoComplete="off"
-          placeholder="Search movies"
-        />
-        <button type="submit" className={styles['SearchForm-button']}>
-          <IoSearch className={styles['SearchForm-icon']} />
-        </button>
-      </form>
-
-      {movies && <MoviesList movies={movies} to={''} />}
-    </Container>
+    <Container>{movies && <MoviesList movies={movies} to={''} />}</Container>
   );
 }
 

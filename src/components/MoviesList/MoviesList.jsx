@@ -12,7 +12,7 @@ export function MoviesList({ movies, to }) {
           <Link
             className={styles['TrendingList-item--link']}
             to={`${to}${id}`}
-            state={location}
+            state={{ from: location }}
           >
             <img
               src={

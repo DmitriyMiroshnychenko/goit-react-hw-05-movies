@@ -17,15 +17,6 @@ export function MovieDetailsPage() {
     fetchMovieById(movieId).then(setMovie);
   }, [movieId]);
 
-  useEffect(() => {
-    if (!location.state) {
-      return;
-    }
-
-    const { state } = location;
-    setPrevLocation(`${state.pathname}${state.search}`);
-  }, [location]);
-
   function onGoBack() {
     navigate(prevLocation ? prevLocation : '/');
   }

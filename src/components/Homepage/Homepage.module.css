@@ -1,8 +1,6 @@
 .TrendingTitle {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   font-family: 'Inter', sans-serif;
   text-transform: uppercase;
+  text-align: center;
 }

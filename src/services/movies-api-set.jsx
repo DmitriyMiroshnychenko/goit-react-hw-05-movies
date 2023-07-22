@@ -1,5 +1,5 @@
 const BASE_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = '618b949cdf4976e3e0613186bf0f20cf';
+const API_KEY = 'b51df2db085891231dadc3f994e11109';
 
 async function fetchWithErrorHandling(url = '') {
   const response = await fetch(url);
