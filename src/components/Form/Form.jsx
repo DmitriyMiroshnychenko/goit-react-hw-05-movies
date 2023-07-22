@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Form } from './Form';
 
 export const Form = () => {
   <form className={styles.SearchForm} onSubmit={handleSubmit}>
