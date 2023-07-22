@@ -2,8 +2,8 @@ import { fetchMovieById } from 'services/movies-api-set';
 import { useEffect, useState } from 'react';
 import { Outlet, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { Container } from 'utils/Container';
-import { MovieMoreDetails } from '../MovieMoreDetails/MovieMoreDetails';
-import noPoster from '../../assets/no-image-poster-large.jpg';
+import { MovieMoreDetails } from '../../MovieMoreDetails/MovieMoreDetails';
+import noPoster from '../../../assets/no-image-poster-large.jpg';
 import styles from './MovieDetailsPage.module.css';
 
 export function MovieDetailsPage() {
@@ -12,6 +12,7 @@ export function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const [prevLocation, setPrevLocation] = useState();
+  const goBack = location?.state?.from || '/';
 
   useEffect(() => {
     fetchMovieById(movieId).then(setMovie);
