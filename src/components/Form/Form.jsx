@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { Form } from './Form';
+import { Form } from './Form.jsx';
 
-export const SearchForm = () => {
+export const Form = () => {
   <form className={styles.SearchForm} onSubmit={handleSubmit}>
     <input
       className={styles['SearchForm-input']}
