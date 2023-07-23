@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { IoSearch } from 'react-icons/io5';
 import styles from './Form.module.css';
 
 export const Form = ({ searchQuery, handleSearchQuery, handleSubmit }) => {
