@@ -16,7 +16,7 @@ export function Homepage() {
   return (
     <Container>
       <h1 className={styles.TrendingTitle}>Trending today</h1>
-      <MoviesList movies={movies} to={'movies/'} />
+      <MoviesList movies={movies} />
     </Container>
   );
 }

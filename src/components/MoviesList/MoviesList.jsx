@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import noPoster from '../../assets/no-image-poster-small.jpg';
 import styles from './MoviesList.module.css';
 
-export function MoviesList({ movies, to }) {
+export function MoviesList({ movies }) {
   const location = useLocation();
   return (
     <ul className={styles.TrendingList}>
@@ -11,7 +11,7 @@ export function MoviesList({ movies, to }) {
         <li className={styles['TrendingList-item']} key={id}>
           <Link
             className={styles['TrendingList-item--link']}
-            to={`${to}${id}`}
+            to={`/movies/${id}`}
             state={{ from: location }}
           >
             <img
@@ -36,8 +36,7 @@ MoviesList.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
-      poster_path: PropTypes.string.isRequired,
+      poster_path: PropTypes.string,
     })
   ),
-  to: PropTypes.string.isRequired,
 };

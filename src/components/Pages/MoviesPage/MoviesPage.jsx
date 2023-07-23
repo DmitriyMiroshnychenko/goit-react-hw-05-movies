@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { fetchMovieByQuery } from 'services/movies-api-set';
-import { IoSearch } from 'react-icons/io5';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Container } from 'utils/Container';
 import { MoviesList } from 'components/MoviesList';
-import styles from './MoviesPage.module.css';
+import { Form } from 'components/Form';
 
 export function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -27,41 +26,26 @@ export function MoviesPage() {
   }, [searchParams]);
 
   function handleSearchQuery(event) {
-    setSearchQuery(event.currentTarget.value.toLowerCase());
+    setSearchQuery(event.target.value);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    if (searchQuery.trim() === '') {
+  function handleSubmit(value) {
+    if (value.trim() === '') {
       return;
     }
-
     setSearchParams({ query: searchQuery });
-    fetchMovieByQuery(searchQuery).then(movies => {
-      setMovies(movies.results);
-    });
 
     setSearchQuery('');
   }
 
   return (
     <Container>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <input
-          className={styles.input}
-          type="text"
-          autoComplete="off"
-          autoFocus
-          placeholder="Search movies"
-          value={searchQuery}
-          onChange={handleSearchQuery}
-        />
-        <button type="submit" className={styles.button}>
-          <IoSearch className={styles.icon} />
-        </button>
-      </form>
-      <Container>{movies && <MoviesList movies={movies} to={''} />}</Container>
+      <Form
+        searchQuery={searchQuery}
+        onSubmit={handleSubmit}
+        handleSearchQuery={handleSearchQuery}
+      />
+      <Container>{movies && <MoviesList movies={movies} />}</Container>
     </Container>
   );
 }

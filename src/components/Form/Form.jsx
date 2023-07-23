@@ -2,7 +2,11 @@ import PropTypes from 'prop-types';
 import { IoSearch } from 'react-icons/io5';
 import styles from './Form.module.css';
 
-export const Form = ({ searchQuery, handleSearchQuery, handleSubmit }) => {
+export const Form = ({ searchQuery, onSubmit, handleSearchQuery }) => {
+  function handleSubmit(event) {
+    event.preventDefault();
+    onSubmit(event.target.elements.searchQuery.value);
+  }
   return (
     <form className={styles.SearchForm} onSubmit={handleSubmit}>
       <input
