@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Form } from '../Form/Form.jsx';
+import { SearchForm } from './Form.jsx';
 
 export function Form() {
   <form className={styles.SearchForm} onSubmit={handleSubmit}>
@@ -18,7 +18,7 @@ export function Form() {
   </form>;
 }
 
-Form.propTypes = {
+SearchForm.propTypes = {
   searchQuery: PropTypes.string,
   handleSearchQuery: PropTypes.func,
   handleSubmit: PropTypes.func,
