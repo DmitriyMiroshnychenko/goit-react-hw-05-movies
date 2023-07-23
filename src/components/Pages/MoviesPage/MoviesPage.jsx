@@ -46,7 +46,23 @@ export function MoviesPage() {
   }
 
   return (
-    <Container>{movies && <MoviesList movies={movies} to={''} />}</Container>
+    <Container>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          className={styles.input}
+          type="text"
+          autoComplete="off"
+          autoFocus
+          placeholder="Search movies"
+          value={searchQuery}
+          onChange={handleSearchQuery}
+        />
+        <button type="submit" className={styles.button}>
+          <IoSearch className={styles.icon} />
+        </button>
+      </form>
+      <Container>{movies && <MoviesList movies={movies} to={''} />}</Container>
+    </Container>
   );
 }
 

@@ -11,15 +11,13 @@ export function MovieDetailsPage() {
   const navigate = useNavigate();
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const [prevLocation, setPrevLocation] = useState();
-  const goBack = location?.state?.from || '/';
 
   useEffect(() => {
     fetchMovieById(movieId).then(setMovie);
   }, [movieId]);
 
   function onGoBack() {
-    navigate(prevLocation ? prevLocation : '/');
+    navigate(location?.state?.from || '/');
   }
 
   return (

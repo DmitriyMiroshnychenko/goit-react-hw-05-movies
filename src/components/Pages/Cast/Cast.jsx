@@ -27,7 +27,7 @@ export function Cast() {
 
   return (
     <>
-      {cast && (
+      {cast.length > 0 ? (
         <>
           <hr />
           <ul className={styles.CastList}>
@@ -48,6 +48,8 @@ export function Cast() {
             ))}
           </ul>
         </>
+      ) : (
+        <p className={styles.NoCast}>No cast found</p>
       )}
     </>
   );
