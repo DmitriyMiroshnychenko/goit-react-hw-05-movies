@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import { SearchForm } from './Form';
 
-export const SearchForm = () => {
-  //const [searchQuery, setSearchQuery] = useState('');
+export const Form = () => {
   <form className={styles.SearchForm} onSubmit={handleSubmit}>
     <input
       className={styles['SearchForm-input']}
