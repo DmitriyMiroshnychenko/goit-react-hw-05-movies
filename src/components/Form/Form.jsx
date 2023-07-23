@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Form as SearchForm } from './Form';
+import { SearchForm } from './Form';
 
 export const SearchForm = () => {
   //const [searchQuery, setSearchQuery] = useState('');
