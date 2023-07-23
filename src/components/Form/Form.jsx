@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { SearchForm } from '../Form/Form.jsx';
+import { Form } from '../Form/Form.jsx';
 
-export const SearchForm = () => {
+export function Form() {
   <form className={styles.SearchForm} onSubmit={handleSubmit}>
     <input
       className={styles['SearchForm-input']}
@@ -16,9 +16,9 @@ export const SearchForm = () => {
       <IoSearch className={styles['SearchForm-icon']} />
     </button>
   </form>;
-};
+}
 
-SearchForm.propTypes = {
+Form.propTypes = {
   searchQuery: PropTypes.string,
   handleSearchQuery: PropTypes.func,
   handleSubmit: PropTypes.func,
